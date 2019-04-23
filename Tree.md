@@ -1,1 +1,2 @@
-/blob/master/Tree.jpg
+
+![Tree](/https://github.com/chenluzhong/ubiquitous-adventure/Tree.jpg)
