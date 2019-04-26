@@ -1,7 +1,6 @@
-import os
-import sys
-import winreg
-import time
+import os,sys,winreg,time
+import easygui as e
+
 # 获取当前执行的脚本所在的路径
 dirname, filename = os.path.split(os.path.abspath(sys.argv[0]))
 print("running from", dirname)
@@ -27,7 +26,7 @@ if __name__ == '__main__':
 def zuijia():
     Flag = True
     # os.chdir(pathvar)
-    filename = input("请定义您要输出的文件名字:")
+    filename = e.enterbox(msg="输入文件名字", title='第一步', default='', strip=True, image=None, root=None)
     if filename == "exit()":
         time.sleep(0.3)
         print("即将退出,欢迎下次再来")
@@ -42,7 +41,7 @@ def zuijia():
     if not os.path.exists(dirsa):
         open(dirsa+".py",mode="w",encoding="utf-8")
     while Flag:
-        pathvar = input("请输入您的课件所在的路径:")
+        pathvar = e.enterbox(msg="输入课件的路径", title='第二步', default='', strip=True, image=None, root=None)
         if pathvar == "exit()":
             print("即将退出,请等待")
             time.sleep(2)
