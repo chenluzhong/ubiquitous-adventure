@@ -21,12 +21,11 @@ if __name__ == '__main__':
     print(Desktop_path)
 
 # 主函数  运行前请输入所有课件所在的目录
+filename = e.enterbox(msg="输入文件名字", title='第一步', default='', strip=True, image=None, root=None)
 
-
-def zuijia():
+def zuijia(filename):
     Flag = True
     # os.chdir(pathvar)
-    filename = e.enterbox(msg="输入文件名字", title='第一步', default='', strip=True, image=None, root=None)
     if filename == "exit()":
         time.sleep(0.3)
         print("即将退出,欢迎下次再来")
@@ -72,7 +71,7 @@ def zuijia():
 while True:
     print("*"*20+"欢迎使用本程序"+"*"*20)
     print("友情提示,如果想要退出此程序,请输入==> exit()")
-    zuijia()
+    zuijia(filename)
 
 '''
 # 对listvar 进行数据清洗
