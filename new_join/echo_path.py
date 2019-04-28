@@ -22,10 +22,13 @@ if __name__ == '__main__':
 
 # 主函数  运行前请输入所有课件所在的目录
 filename = e.enterbox(msg="输入文件名字", title='第一步', default='', strip=True, image=None, root=None)
-
 def zuijia(filename):
     Flag = True
+    # filename = input("请输入路径")
+    # filename = f
     # os.chdir(pathvar)
+    # filename = e.enterbox(msg="输入文件名字", title='第一步', default='', strip=True, image=None, root=None)
+    # filename = "123123zuoye"
     if filename == "exit()":
         time.sleep(0.3)
         print("即将退出,欢迎下次再来")
@@ -36,11 +39,13 @@ def zuijia(filename):
         print("输入错误.程序崩溃,请重新运行")
         time.sleep(2)
         os._exit(0)
-    dirsa = Desktop_path+"\\"+filename
+    # filename = "123123zuoye"
+    dirsa = Desktop_path+"\\"+filename+".py"
     if not os.path.exists(dirsa):
-        open(dirsa+".py",mode="w",encoding="utf-8")
-    while Flag:
+        open(dirsa,mode="w",encoding="utf-8")
+    while True:
         pathvar = e.enterbox(msg="输入课件的路径", title='第二步', default='', strip=True, image=None, root=None)
+        # pathvar = input("请输入课件路径")
         if pathvar == "exit()":
             print("即将退出,请等待")
             time.sleep(2)
@@ -65,14 +70,17 @@ def zuijia(filename):
     for i in listvar2:
         with open(i, mode="r+", encoding="utf-8") as fp:
             res = fp.readlines()
-            with open(Desktop_path+"\\"+filename+".py", mode="a+", encoding="utf-8") as fp2:
+            # print(res)
+            with open(dirsa, mode="a+", encoding="utf-8") as fp2:
                 fp2.writelines(res)
 
 while True:
+    # filename = "123123zuoye"
     print("*"*20+"欢迎使用本程序"+"*"*20)
     print("友情提示,如果想要退出此程序,请输入==> exit()")
     zuijia(filename)
-
+    print(filename,"1123123213123")
+print(filename)
 '''
 # 对listvar 进行数据清洗
 def shujuqingxi():
